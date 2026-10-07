@@ -1,16 +1,113 @@
-# React + Vite
+# DebugMind AI – Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder contains the frontend application for **DebugMind AI**, an intelligent bug tracking and AI-assisted code review platform.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React.js
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
+- Axios
+- Lucide React
+- React Toastify
+- Recharts
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+Client/
+├── Components/
+│   ├── Common/
+│   ├── bug/
+│   ├── dashboard/
+│   ├── layout/
+│   ├── member/
+│   └── project/
+├── pages/
+│   ├── auth/
+│   ├── bugs/
+│   ├── dashboard/
+│   ├── members/
+│   └── projects/
+├── routes/
+├── services/
+├── src/
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-## Expanding the ESLint configuration
+## Main Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User registration and login
+- Role-based access
+- Project management
+- Project upload for AI scanning
+- Bug tracking and management
+- Bug filtering and search
+- AI bug analysis
+- AI-assisted bug fixing
+- Project dashboard
+- Bug statistics and charts
+- Team member management
+- Protected routes
+- Responsive user interface
+
+## Installation
+
+Clone the repository and navigate to the Client folder:
+
+```bash
+cd Client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will run on the Vite development server.
+
+## Backend
+
+The frontend communicates with the DebugMind AI backend through REST APIs.
+
+Configure the backend API URL in the appropriate environment configuration.
+
+## Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The generated `dist/` folder is ignored by Git.
+
+##  Project
+
+**DebugMind AI – Intelligent Bug Tracking & Code Review Platform**
+
+Developed as a full-stack project using React and Node.js.
+
+## 🌐 Deployment
+
+### Frontend – Vercel
+
+**Live Application:**  
+
+
+### Backend – Render
+
+**Backend API:**  
+
