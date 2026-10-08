@@ -4,12 +4,12 @@ import { Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import AnimatedBackground from "../../components/common/AnimatedBackground";
+import AnimatedBackground from "../../Components/Common/AnimatedBackground";
 import AuthCard from "../../components/common/AuthCard";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 
-import { loginUser } from "../../services/authService";
+import { loginUser } from "../../Services/authService";
 
 const Login = () => {
   const navigate = useNavigate();
