@@ -4,7 +4,7 @@ import DashboardCard from "../../Components/layout/DashboardCard";
 import RecentBugs from "../../Components/dashboard/RecentBugs";
 import ProjectChart from "../../Components/dashboard/ProjectChart";
 import AIInsights from "../../Components/dashboard/AIInsights";
-import { getDashboard } from "../../services/dashboardService";
+import { getDashboard } from "../../Services/dashboardService";
 import { getProjects } from "../../services/projectService";
 
 const Dashboard = () => {
