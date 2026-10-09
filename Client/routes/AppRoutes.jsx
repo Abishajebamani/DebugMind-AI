@@ -18,7 +18,7 @@ const AppRoutes = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/bugs" element={<Bugs />} />
-        <Route path="/members" element={<Members />} />
+        <Route path="/members" element={<Members />} /> 
       </Routes>
     </BrowserRouter>
   );

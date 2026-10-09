@@ -31,63 +31,48 @@ export const registerUser = async (userData) => {
   return result.rows[0];
 };
 
+
+
 export const loginUser = async (email, password) => {
   const result = await pool.query(
-    "SELECT * FROM users WHERE email = $1",
+    "SELECT id, name, email, password, role FROM users WHERE email = $1",
     [email]
   );
 
   const user = result.rows[0];
 
-  console.log("User found:", user);
-  // Compare password
-const isMatch = await bcrypt.compare(password, user.password);
-
-console.log("Password Match:", isMatch);
-
-if (!isMatch) {
-  throw new Error("Invalid email or password");
-}
-
-// Generate JWT
-console.log("Login Secret:", process.env.JWT_SECRET);
-const token = jwt.sign(
-  {
-    id: user.id,
-    role: user.role,
-  },
-  process.env.JWT_SECRET,
-  {
-    expiresIn: "7d",
+  // Check whether the user exists
+  if (!user) {
+    throw new Error("Invalid email or password");
   }
-);
 
-// Return user and token
-return {
-  token,
-  user: {
-    id: user.id,
-    name: user.name,
-    email: user.email,
-    role: user.role,
-  },
-};
-};
+  // Compare the entered password
+  const isMatch = await bcrypt.compare(password, user.password);
 
-export const updateProject = async (projectId, userId, projectData) => {
-  const { name, description } = projectData;
+  if (!isMatch) {
+    throw new Error("Invalid email or password");
+  }
 
-  const result = await pool.query(
-    `
-    UPDATE projects
-    SET name = $1,
-        description = $2
-    WHERE id = $3
-      AND user_id = $4
-    RETURNING *;
-    `,
-    [name, description, projectId, userId]
+  if (!process.env.JWT_SECRET) {
+    throw new Error("JWT_SECRET is not configured");
+  }
+
+  const token = jwt.sign(
+    {
+      id: user.id,
+      role: user.role,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "7d" }
   );
 
-  return result.rows[0];
+  return {
+    token,
+    user: {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    },
+  };
 };
