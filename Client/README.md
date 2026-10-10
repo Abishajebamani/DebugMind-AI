@@ -104,10 +104,10 @@ Developed as a full-stack project using React and Node.js.
 
 ### Frontend – Vercel
 
-**Live Application:**  
+https://debug-mind-e9k5za94f-abisha-s-projects.vercel.app/
 
 
 ### Backend – Render
 
-**Backend API:**  
+https://debugmind-ai-3y1u.onrender.com  
 
