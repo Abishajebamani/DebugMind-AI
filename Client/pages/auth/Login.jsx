@@ -8,8 +8,7 @@ import AnimatedBackground from "../../Components/Common/AnimatedBackground.jsx";
 import AuthCard from "../../Components/Common/AuthCard.jsx";
 import Button from "../../Components/Common/Button.jsx";
 import Input from "../../Components/Common/Input.jsx";
-
-import { loginUser } from "../../Services/authService";
+import { loginUser } from "../../services/authService";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -84,7 +83,7 @@ const Login = () => {
 
       <AuthCard>
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             DebugMind AI
           </h1>
 
@@ -125,7 +124,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-[52px] text-slate-400 hover:text-white"
+              className="absolute right-4 top-13 text-slate-400 hover:text-white"
             >
               {showPassword ? (
                 <EyeOff size={18} />
